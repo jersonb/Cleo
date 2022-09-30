@@ -113,7 +113,7 @@ public class HomeController : Controller
 
     private static string Captalize(string name)
     {
-        name = name.ToLower();
+        name = name.ToLower().Trim();
 
         var splited = name.Split(" ");
 
@@ -123,6 +123,8 @@ public class HomeController : Controller
 
         foreach (var word in splited)
         {
+            if(string.IsNullOrWhiteSpace(word)) continue;
+
             if (nonCaptalize.Contains(word))
             {
                 newString.Append(word + " ");
