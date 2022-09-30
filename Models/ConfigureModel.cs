@@ -17,6 +17,9 @@ namespace Cleo.Models
 
         [Display(Name = "Nome da fonte")]
         public string FontFamily { get; set; } = Fonts.TimesNewRoman!;
+        
+        [Display(Name = "Cor da Fonte")]
+        public string FontColor { get; set; } = Colors.Black;
 
         [Display(Name = "Tamanho da fonte")]
         public int FontSize { get; set; } = 25;

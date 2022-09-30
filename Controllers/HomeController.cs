@@ -97,7 +97,8 @@ public class HomeController : Controller
                         .AlignCenter()
                         .Text(name)
                         .FontFamily(configure.FontFamily)
-                        .FontSize(configure.FontSize);
+                        .FontSize(configure.FontSize)
+                        .FontColor(configure.FontColor);
 
                         if (configure.Itailc)
                             item.Italic();
