@@ -17,7 +17,7 @@ namespace Cleo.Models
 
         [Display(Name = "Nome da fonte")]
         public string FontFamily { get; set; } = Fonts.TimesNewRoman!;
-        
+
         [Display(Name = "Cor da Fonte")]
         public string FontColor { get; set; } = Colors.Black;
 
@@ -49,6 +49,7 @@ namespace Cleo.Models
         new SelectListItem(Fonts.LucidaConsole,Fonts.LucidaConsole),
         new SelectListItem(Fonts.TimesNewRoman,Fonts.TimesNewRoman),
         new SelectListItem(Fonts.Verdana,Fonts.Verdana),
+        new SelectListItem("Roboto","Roboto"),
     };
     }
 }
