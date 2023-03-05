@@ -3,7 +3,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 COPY ["fonts/", "app/fonts/"]
 RUN mkdir -p /usr/share/fonts/truetype/
-RUN install -m644 fonts/*.ttf /usr/share/fonts/truetype/
+RUN install -m644 /app/fonts/*.ttf /usr/share/fonts/truetype/
 RUN apt-get update
 RUN apt-get install -y libfreetype6
 RUN apt-get install -y libfontconfig1
