@@ -1,0 +1,99 @@
+﻿@model ConfigureModel
+
+<div class="row">
+    <div class="col-md-4 col-lg-4 col-xl-4 pt-3 border border-secondary">
+        <form class="form-horizontal" method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Post">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#configure" type="button" role="tab" aria-controls="home" aria-selected="true">Configurar e testar</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#generate" type="button" role="tab" aria-controls="profile" aria-selected="false">Gerar certificados</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="configure" role="tabpanel" aria-labelledby="home-tab">
+
+                    <div class="form-group pb-3 pt-3">
+                        <span asp-validation-for="File" class="text-danger"></span>
+                        <label asp-for="File"></label>
+                        <input asp-for="File" type="file" name="file" class="form-control" />
+                    </div>
+
+                    <div class="form-group pb-3">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+
+                    <div class="form-group pb-3">
+                        <label asp-for="PositionY"></label>
+                        <input asp-for="PositionY" class="form-control" />
+                    </div>
+
+                    <div class="form-group pb-3">
+                        <label asp-for="FontSize"></label>
+                        <input asp-for="FontSize" class="form-control" />
+                    </div>
+
+                    <div class="form-group pb-3">
+                        <label asp-for="FontColor"></label>
+                        <input asp-for="FontColor" type="color" class="form-control" />
+                    </div>
+
+                    <div class="form-group pb-3">
+                        <label asp-for="FontFamily"></label>
+                        <select asp-for="FontFamily" asp-items="@ViewBag.FontNames" class="form-select">
+                        </select>
+                    </div>
+
+                    <div class=" custom-control custom-switch form-check ">
+                        <input type="checkbox" class="custom-control-input" asp-for="Itailc" id="Italic">
+                        <label class="custom-control-label form-check-label" asp-for="Itailc"></label>
+                    </div>
+
+                    <div class=" custom-control custom-switch form-check ">
+                        <input type="checkbox" class="custom-control-input" asp-for="Bold" id="Bold">
+                        <label class="custom-control-label form-check-label" asp-for="Bold"></label>
+                    </div>
+
+                    <div class=" custom-control custom-switch form-check ">
+                        <input type="checkbox" class="custom-control-input" asp-for="Captalize" id="Captalize">
+                        <label class="custom-control-label form-check-label" asp-for="Captalize"></label>
+                    </div>
+
+                    <div class=" custom-control custom-switch form-check ">
+                        <input type="checkbox" class="custom-control-input" asp-for="ToUpper" id="ToUpper">
+                        <label class="custom-control-label form-check-label" asp-for="ToUpper"></label>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="generate" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="form-group pt-3 pb-3">
+                        <label asp-for="Names"></label>
+                        <textarea asp-for="Names" class="form-control" rows="15"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group pt-3 pb-3">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Gerar</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="col-md-8 col-lg-8 col-xl-8 ">
+        <div class="p-3 m-3">
+
+            @if (Model.Data.Any())
+            {
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Data)" />
+            }
+            else
+            {
+                <img src="~/img/template.png" width="800px" />
+            }
+        </div>
+
+    </div>
+</div>
