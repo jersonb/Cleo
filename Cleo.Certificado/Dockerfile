@@ -5,11 +5,6 @@ RUN apt-get update
 RUN apt-get install -y libfreetype6
 RUN apt-get install -y libfontconfig1
 RUN apt-get update; apt-get install -y fontconfig
-
-COPY fonts/ fonts/ 
-
-RUN mkdir -p /usr/share/fonts/truetype/
-RUN install -m644 *.ttf /usr/share/fonts/truetype/
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
