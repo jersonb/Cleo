@@ -69,7 +69,11 @@ public class HomeController : Controller
     private IActionResult GeneratePreview(ConfigureModel configure)
     {
         var pdf = GetPdf(configure, configure.Name);
-        var preview = pdf.GenerateImages().First();
+        var imageSettings = new QuestPDF.Infrastructure.ImageGenerationSettings
+        {
+            RasterDpi = 96
+        };
+        var preview = pdf.GenerateImages(imageSettings).First();
 
         configure.Data = preview;
         return Index(configure);
