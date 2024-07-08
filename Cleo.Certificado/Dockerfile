@@ -1,6 +1,6 @@
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 COPY ["fonts/", "app/fonts/"]
 RUN mkdir -p /usr/share/fonts/truetype/
 RUN install -m644 /app/fonts/*.ttf /usr/share/fonts/truetype/
@@ -11,7 +11,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["Cleo.Certificado/Cleo.Certificado.csproj", "Cleo.Certificado/"]
 RUN dotnet restore "Cleo.Certificado/Cleo.Certificado.csproj"
@@ -25,4 +25,5 @@ RUN dotnet publish "Cleo.Certificado.csproj" -c Release -o /app/publish /p:UseAp
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Cleo.Certificado.dll"]
+ENV ASPNETCORE_HTTP_PORTS=80
+ENTRYPOINT ["dotnet", "Cleo.Certificado.dll", "--por"]
