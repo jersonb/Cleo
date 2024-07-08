@@ -7,7 +7,7 @@ namespace Cleo.Certificado.Models;
 public class ConfigureModel
 {
     [Display(Name = "Imagem")]
-    public IFormFile File { get; set; } = default!;
+    public IFormFile BackGroundImgage { get; set; } = default!;
 
     [Display(Name = "Nome de teste")]
     public string Name { get; set; } = default!;
@@ -40,16 +40,16 @@ public class ConfigureModel
     [Display(Name = "Caixa Alta")]
     public bool ToUpper { get; set; }
 
-    public byte[] Data { get; set; } = [];
+    public byte[] Preview { get; set; } = [];
 
     public static IEnumerable<SelectListItem> FontNames =>
-[
-    new (Fonts.Arial,Fonts.Arial),
-    new (Fonts.Calibri,Fonts.Calibri),
-    new (Fonts.LucidaConsole,Fonts.LucidaConsole),
-    new (Fonts.TimesNewRoman,Fonts.TimesNewRoman),
-    new (Fonts.Verdana,Fonts.Verdana),
-    new ("Roboto","Roboto"),
-    new ("DejaVu","DejaVu Sans"),
-];
+    [
+        new (Fonts.Arial,Fonts.Arial),
+        new (Fonts.Calibri,Fonts.Calibri),
+        new (Fonts.LucidaConsole,Fonts.LucidaConsole),
+        new (Fonts.TimesNewRoman,Fonts.TimesNewRoman),
+        new (Fonts.Verdana,Fonts.Verdana),
+        new ("Roboto","Roboto"),
+        new ("DejaVu","DejaVu Sans"),
+    ];
 }
