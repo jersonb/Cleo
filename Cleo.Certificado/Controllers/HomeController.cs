@@ -25,7 +25,7 @@ public class HomeController : Controller
     {
         var isInvalid = (string.IsNullOrWhiteSpace(configure.Name)
             && string.IsNullOrWhiteSpace(configure.Names))
-            || configure.File == default;
+            || configure.BackGroundImgage == default;
 
         if (isInvalid)
             return Index(configure);
@@ -75,7 +75,7 @@ public class HomeController : Controller
         };
         var preview = pdf.GenerateImages(imageSettings).First();
 
-        configure.Data = preview;
+        configure.Preview = preview;
         return Index(configure);
     }
 
@@ -87,7 +87,7 @@ public class HomeController : Controller
         if (configure.ToUpper)
             name = name.ToUpper();
 
-        var image = configure.File!.OpenReadStream();
+        var image = configure.BackGroundImgage!.OpenReadStream();
 
         var document = Document.Create(container =>
                 container.Page(page =>
