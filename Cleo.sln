@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cleo.Certificado", "Cleo.Certificado\Cleo.Certificado.csproj", "{EC6DC5CF-0736-4AC8-B03D-C90EB5189EC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cleo.Certificado", "Cleo.Certificado\Cleo.Certificado.csproj", "{EC6DC5CF-0736-4AC8-B03D-C90EB5189EC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cleo.Wasm", "Cleo.Wasm\Cleo.Wasm.csproj", "{415949BE-52BD-4E96-9D2D-6781E5B92102}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{EC6DC5CF-0736-4AC8-B03D-C90EB5189EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC6DC5CF-0736-4AC8-B03D-C90EB5189EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC6DC5CF-0736-4AC8-B03D-C90EB5189EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415949BE-52BD-4E96-9D2D-6781E5B92102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415949BE-52BD-4E96-9D2D-6781E5B92102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415949BE-52BD-4E96-9D2D-6781E5B92102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415949BE-52BD-4E96-9D2D-6781E5B92102}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5F8EF59-8966-4968-A5B0-D24417E17AE4}
 	EndGlobalSection
 EndGlobal
