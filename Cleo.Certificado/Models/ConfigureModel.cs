@@ -51,5 +51,6 @@ public class ConfigureModel
         new (Fonts.Verdana,Fonts.Verdana),
         new ("Roboto","Roboto"),
         new ("DejaVu","DejaVu Sans"),
+        new ("Amaranth","Amaranth"),
     ];
 }
